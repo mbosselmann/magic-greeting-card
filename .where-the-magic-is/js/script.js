@@ -1,4 +1,8 @@
-import { calculateAmountOfStars, getRgbFromColorCode } from "./helper.js";
+import {
+  calculateAmountOfStars,
+  getRgbFromColorCode,
+  setHeaderOpacity,
+} from "./helper.js";
 import { animateStars } from "./starLogic/animateStars.js";
 import { createStars } from "./starLogic/createStars.js";
 
@@ -6,6 +10,9 @@ const card = document.querySelector(".card");
 card.addEventListener("click", () => {
   card.classList.toggle("flipcard");
 });
+
+window.addEventListener("resize", setHeaderOpacity);
+setHeaderOpacity();
 
 let timeoutId = null;
 

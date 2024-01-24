@@ -27,3 +27,16 @@ export function calculateAmountOfStars(amount) {
     return 200;
   }
 }
+
+export function setHeaderOpacity() {
+  const headline = document.querySelector(".headline");
+  const header = document.querySelector(".header");
+
+  if (headline && header) {
+    const backgroundColor = getRgbFromColorCode(
+      getComputedStyle(header).getPropertyValue("background-color")
+    );
+
+    header.style.backgroundColor = `${backgroundColor.slice(0, -1)}, 0.7)`;
+  }
+}
