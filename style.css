@@ -2,8 +2,17 @@
 
 .headline {
   font-family: "Allison", Geneva, Verdana, sans-serif;
+  color: white;
+  text-shadow: 3px 3px midnightblue;
   font-size: 72px;
+}
+
+.header {
   background-color: white;
+  position: absolute;
+  top: 70%;
+  width: 100%;
+  z-index: 2;
   padding-bottom: 10px;
 }
 

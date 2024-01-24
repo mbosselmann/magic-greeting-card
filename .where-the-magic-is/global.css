@@ -114,13 +114,24 @@ body {
   place-content: center;
 }
 
-.front .headline {
-  text-align: center;
+.header {
+  background-color: white;
   position: absolute;
-  top: 60%;
+  top: 70%;
   width: 100%;
   z-index: 2;
+}
+
+.headline {
+  text-align: center;
   margin: 0;
+}
+
+:not(header) .headline {
+  position: absolute;
+  top: 70%;
+  width: 100%;
+  z-index: 2;
 }
 
 p {
@@ -144,7 +155,7 @@ canvas {
   from {
     opacity: 0;
   }
-  tp {
+  to {
     opacity: 1;
   }
 }
