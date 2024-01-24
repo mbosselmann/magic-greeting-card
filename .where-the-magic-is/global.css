@@ -127,7 +127,7 @@ body {
   margin: 0;
 }
 
-:not(header) .headline {
+:not(header) > .headline {
   position: absolute;
   top: 70%;
   width: 100%;
