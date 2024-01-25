@@ -65,23 +65,21 @@ Write the base structure for your magic holiday card:
 
 ```html
 <main>
-  <section>
-    <h1 class="headline">Greetings from Hamburg!</h1>
-    <h2 class="title">Dear Felix,</h2>
-    <p>
-      magical greetings from Hamburg! The Speicherstadt at night is fantastic.
-      You should have seen that!
-    </p>
-    <p>
-      I hope you are doing well and that you are enjoying your holidays. May
-      your holidays be exactly what you need - a perfect mix of relaxation,
-      adventure and moments of happiness.
-    </p>
-    <p>
-      All the best, <br />
-      Mareike
-    </p>
-  </section>
+  <h1>Greetings from Hamburg!</h1>
+  <h2>Dear Felix,</h2>
+  <p>
+    magical greetings from Hamburg! The Speicherstadt at night is fantastic. You
+    should have seen that!
+  </p>
+  <p>
+    I hope you are doing well and that you are enjoying your holidays. May your
+    holidays be exactly what you need - a perfect mix of relaxation, adventure
+    and moments of happiness.
+  </p>
+  <p>
+    All the best, <br />
+    Mareike
+  </p>
 </main>
 ```
 
@@ -125,9 +123,9 @@ The first thing we want to do is to add a class to the `<h1>` element. We will u
 
 ```css
 .headline {
-  font-family: "Allison", Geneva, Verdana, sans-serif;
+  font-family: "Allison";
   color: blue;
-  font-size: 72px;
+  font-size: 56px;
 }
 ```
 
@@ -153,20 +151,29 @@ We need the predefined classes `.card`, `.front` and `.back` to be added to thei
 ```html
 <main class="card">
   <section class="front">
-    <h1 class="headline">Happy Holidays!</h1>
+    <header class="header">
+      <h1 class="headline">Greetings from Hamburg</h1>
+    </header>
+    <img
+      class="postcardimage"
+      src="./images/hamburg.jpg"
+      alt="magic greetinc card image"
+    />
+    <canvas></canvas>
   </section>
   <section class="back">
-    <h2>Liebe Sophia,</h2>
+    <h2 class="title">Dear Felix,</h2>
     <p>
-      ich wünsche dir eine wunderbare Reise und unvergessliche Erlebnisse.
-      Erhole dich gut und komm mit vielen schönen Erinnerungen zurück!
+      magical greetings from Hamburg! The Speicherstadt at night is fantastic.
+      You should have seen that!
     </p>
     <p>
-      Mögen deine Ferien genau das sein, was du brauchst – eine perfekte
-      Mischung aus Entspannung, Abenteuer und Glücksmomenten.
+      I hope you are doing well and that you are enjoying your holidays. May
+      your holidays be exactly what you need - a perfect mix of relaxation,
+      adventure and moments of happiness.
     </p>
     <p>
-      Alles Liebe, <br />
+      All the best, <br />
       Mareike
     </p>
   </section>
@@ -179,9 +186,9 @@ We need the predefined classes `.card`, `.front` and `.back` to be added to thei
 
 #### Explainer and Coding
 
-Click around and show that nothing happens.
+If you click around you will see that the card is not turning yet. We need to add some JavaScript to make this happen. That's why we do not need to add a class attribute to our HTML elements. This will be solved with JavaScript.
 
-We need to add the turning in CSS. In combination with the magic JS, the card "turns" now.
+But we need to add the turning in CSS. In combination with the magic JS, the card "turns" now.
 
 ```css
 .flipcard {
@@ -189,21 +196,23 @@ We need to add the turning in CSS. In combination with the magic JS, the card "t
 }
 ```
 
+When you now click on the card you will see that it is turning! Yay. :)
+
 ### Add Static Image from `/images`
 
-Add image to the end of the `.front` section. show that the order of the tags makes a significant difference.
-
-Use one of the prepared images in `/images`.
+Next step is to finish the front of the card. We want to add an image. We already prepared some images for you that you can use and that are stored in the `/images` folder. You can also upload your own images to codesandbox and use them. We add the image to the front of the card.
 
 ```html
 <img
   class="postcardimage"
-  src="./images/snowscape-2.jpg"
-  alt="magic holiday image"
+  src="./images/hamburg.jpg"
+  alt="magic greetinc card image"
 />
 ```
 
 > 💡 `.postcardimage` is a prepared global class that makes the image cover the front of the card. sets `object-fit: cover`.
+
+### More Styles
 
 This is a good chance to update the color of the `.headline` and add:
 
@@ -221,6 +230,18 @@ You can change the style of writing and maybe also the font size:
 }
 ```
 
+**Bonus: Opaque background**
+
+Maybe you want to have to have the background-color of your headline to be transparent. You can do this by adding `header` element to your front. You also need to put the headline inside of the header element.
+
+Feel free to change the color of the background to your liking:
+
+```css
+.header {
+  background-color: aqua;
+}
+```
+
 ### Add Sparkle Effect
 
 Last but not least, we also want to add a sparkle effect to the front side of our card. We will do this by adding a canvas element to the first section of our card.
@@ -229,52 +250,80 @@ Last but not least, we also want to add a sparkle effect to the front side of ou
 <canvas></canvas>
 ```
 
-And we need to add call the function that initializes and updates the sparkle effect inside of our canvas element. We need to hand over to values: the amount of stars we want to be created and the color they should have.
+Now we will write a little bit of JavaScript. JavaScript has all the logic we need to create the sparkle effect. We will use a function that we have already prepared for you.
+
+And we need to call the function that initializes and updates the sparkle effect inside of our canvas element. We need to hand over to values: the amount of stars we want to be created and the color they should have.
 
 ```js
-setupCanvas(100, "peachpuff");
+setupCanvas(20, "peachpuff");
 ```
 
 ### Keep styling
 
-- change colors
-- change images
-  - upload own images to codesandbox
-  - use random url `https://source.unsplash.com/random?christmas`, tell them to keep in mind that this is an external resource.
-- change text shadow
-- update texts, add more paragraphs
-- add small image to back?
+Feel free to keep styling your card. You can change the colors, the fonts, the images, the text shadow, the texts, add more paragraphs, add small images to the back and so on. You can also add more images to the `/images` folder and use them. :)
 
-In the end, your magic holiday card could look like this:
+In the end, your magic greeting card could look like this:
 
 ```html
-    <main class="card">
-      <section class="front">
-        <h1 class="headline">Happy Holidays!</h1>
-        <canvas></canvas>
-        <img
-          class="postcardimage"
-          src="./images/snowscape-2.jpg"
-          alt="magic holiday image"
-        />
-      </section>
-      <section class="back">
-        <h2 class="title">Liebe Sophia,</h2>
-        <p>
-          ich wünsche dir eine wunderbare Reise und unvergessliche Erlebnisse.
-          Erhole dich gut und komm mit vielen schönen Erinnerungen zurück!
-        </p>
-        <p>
-          Mögen deine Ferien genau das sein, was du brauchst – eine perfekte
-          Mischung aus Entspannung, Abenteuer und Glücksmomenten.
-        </p>
-        <p>
-          Alles Liebe, <br />
-          Mareike
-        </p>
-      </section>
-    </main>
-  </body>
+<main class="card">
+  <section class="front">
+    <header class="header">
+      <h1 class="headline">Greetings from Hamburg</h1>
+    </header>
+    <img
+      class="postcardimage"
+      src="./images/hamburg.jpg"
+      alt="magic greetinc card image"
+    />
+    <canvas></canvas>
+  </section>
+  <section class="back">
+    <h2>Dear Felix,</h2>
+    <p>
+      magical greetings from Hamburg! The Speicherstadt at night is fantastic.
+      You should have seen that!
+    </p>
+    <p>
+      I hope you are doing well and that you are enjoying your holidays. May
+      your holidays be exactly what you need - a perfect mix of relaxation,
+      adventure and moments of happiness.
+    </p>
+    <p>
+      All the best, <br />
+      Mareike
+    </p>
+  </section>
+</main>
+```
+
+```css
+.headline {
+  font-family: "Allison";
+  color: midnightblue;
+  font-size: 56px;
+  padding-bottom: 10px;
+}
+
+.flipcard {
+  transform: rotateY(180deg);
+}
+
+.card {
+  font-family: "Handlee";
+  font-size: 32px;
+}
+
+.header {
+  background-color: aliceblue;
+}
+
+.title {
+  font-family: "Allison";
+}
+```
+
+```js
+setupCanvas(20, "aliceblue");
 ```
 
 ## Credits
