@@ -265,7 +265,7 @@ In the end, your magic greeting card could look like this:
     <img
       class="postcardimage"
       src="./images/hamburg.jpg"
-      alt="magic greetinc card image"
+      alt="magic greeting card image"
     />
     <canvas></canvas>
   </section>
