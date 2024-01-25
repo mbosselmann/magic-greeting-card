@@ -4,7 +4,7 @@ export function createStars(ctx, amount, minDistance) {
   let stars = [];
   for (let i = 0; i < amount; i++) {
     const newStar = checkCoordinates(stars, ctx, minDistance);
-    stars.push(newStar);
+    if (newStar) stars.push(newStar);
   }
   return stars;
 }
@@ -27,7 +27,7 @@ export function checkCoordinates(stars, ctx, minDistance) {
     attempts++;
   } while (tooClose && attempts < 10);
 
-  return newStar;
+  return tooClose ? null : newStar;
 }
 
 function distanceBetween(star1, star2) {

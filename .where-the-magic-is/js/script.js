@@ -24,8 +24,8 @@ export function setupCanvas(amount, color) {
 
   const canvas = document.querySelector("canvas");
   const ctx = canvas.getContext("2d");
-  canvas.width = sparkleContainer.offsetWidth * 1.5;
-  canvas.height = sparkleContainer.offsetHeight * 1.5;
+  canvas.width = sparkleContainer.offsetWidth * 1.2;
+  canvas.height = sparkleContainer.offsetHeight * 1.2;
 
   let stars = createStars(ctx, amountOfStars, 40);
   animateStars(ctx, stars, starColor, 40);
@@ -36,8 +36,8 @@ export function setupCanvas(amount, color) {
     }
     stars.length = 0;
 
-    canvas.width = sparkleContainer.offsetWidth * 2;
-    canvas.height = sparkleContainer.offsetHeight * 2;
+    canvas.width = sparkleContainer.offsetWidth * 1.2;
+    canvas.height = sparkleContainer.offsetHeight * 1.2;
 
     timeoutId = setTimeout(() => {
       stars = createStars(ctx, amountOfStars, 40);
