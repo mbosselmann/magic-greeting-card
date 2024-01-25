@@ -11,16 +11,21 @@ export function createStars(ctx, amount, minDistance) {
 
 export function checkCoordinates(stars, ctx, minDistance) {
   let x, y, size, newStar, tooClose;
+  const width = ctx.canvas.width;
+  const height = ctx.canvas.height;
+  let attempts = 0;
 
   do {
-    x = getRandom(0, ctx.canvas.width);
-    y = getRandom(0, ctx.canvas.height);
-    size = getRandom(2, 8);
+    x = getRandom(0, width);
+    y = getRandom(0, height);
+    size = getRandom(2, 6);
     newStar = createStar(x, y, size);
-    tooClose = stars.some(
+    const lastStars = stars.slice(-100);
+    tooClose = lastStars.some(
       (existingStar) => distanceBetween(newStar, existingStar) < minDistance
     );
-  } while (tooClose);
+    attempts++;
+  } while (tooClose && attempts < 10);
 
   return newStar;
 }

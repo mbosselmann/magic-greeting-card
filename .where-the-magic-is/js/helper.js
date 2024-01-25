@@ -15,7 +15,7 @@ export function getRgbFromColorCode(colorCode) {
 }
 
 export function calculateAmountOfStars(amount) {
-  if (amount > 0 && amount < 200) {
+  if (amount > 0 && amount < 100) {
     return amount;
   }
 
@@ -23,8 +23,8 @@ export function calculateAmountOfStars(amount) {
     return 0;
   }
 
-  if (amount >= 200) {
-    return 200;
+  if (amount >= 100) {
+    return 100;
   }
 }
 
