@@ -1,13 +1,13 @@
-# Let's Create a Magic Holiday Card!
+# ✨ Let's Create a Magic Greeting Card! ✨
 
-Today we want to learn more about how we can build a magical holiday card using **HTML**, **CSS** and **JavaScript**.
-Since we only have a limited time frame to build the card, there are already some stylings that we have prepared. The basic structure of the HTML is also there and all the logic we need for our magic is there too. ✨
+Today we want to learn more about how we can build a magical greeting card using **HTML**, **CSS** and **JavaScript**.
+Since we only have a limited time frame to build the card, there are already some stylings that we have prepared. The basic structure of the HTML is also already build and all the logic we need for our magic is there too. ✨
 
 Nevertheless, there will be enough options for you to customize your magical card. :)
 
 ## Guide
 
-Starting off with the blank project, let's explain the structure and what we're about to build.
+Starting off with the blank project, let's explain the structure and what we're about to build:
 
 ```
 ├── README.md // you're here
@@ -26,16 +26,17 @@ Starting off with the blank project, let's explain the structure and what we're 
 └── .where-the-magic-is
 ```
 
+To build our magic holiday card, we will need to:
+
+- Think about the **structure of our card** that we will build with **HTML**.
+- Add **some styles** to make it look nice. To achieve this, we will use **CSS**.
+- And **add some magic** to our card. This will be done with **JavaScript**.
+
+Let's get started with the structure of our card! 🥳
+
 ### Semantic HTML
 
 #### Explainer
-
-- [Semantics](https://developer.mozilla.org/en-US/docs/Glossary/semantics)
-- [`<section>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section)
-- [order of headlines](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#accessibility_concerns)
-- [paragraphs in general](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p)
-
-we want to use [landmarks](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main#landmark) like [`<main>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main#landmark) as descriptively as possible. since the card is going to be our core functionality, this will be part of our main tag.
 
 - HTML is short for `HyperText Markup Language`.
 - It is giving content on websites `meaning and structure`. You can imagine HTML as the skeleton
@@ -47,6 +48,8 @@ clarification:
 - `Hypertext`: Refers to the ability of HTML to create links that link one webpage to another. (Either on a single website or in between different websites.) This is a fundamental aspect of the web and the idea behind the "world wide" interconnection.
 - `Markup Language`: Refers to a syntax that uses specific element to structure or format a document. You have already learned about a markup language, which is called "Markdown". While Markdown has a very simple syntax and is primarily used for formatting, HTML is more complex and its primarily used to structure a document.
 
+**When we write HTML we use the following terms:**
+
 - `HTML element`: every piece of content in a HTML document is placed inside of an HTML element
 - `HTML tags`: the elements are written in form of HTML tags, meaning surrounded by `<>` and
   `</>`
@@ -54,11 +57,7 @@ clarification:
 - `local attributes`: There are attributes that are specific to some HTML elements, for example `src`, which only makes sense if a resource is supposed to be embedded into the webpage (e.g. images or videos)
 - `global attributes`: There are also attributes that can be added to any kind of element. (e.g. `class`, `id`, `style`, `hidden`)
 
-#### The Benefits of Writing Semantic HTMl Are:
-
-- `Accessibility`: Screenreaders can function much better with semantic HTML, which can help e.g. visually impaired users to navigate the webpage and have a better user experience
-- `SEO`: It's relevant for search engines to evaluate the importance and the context of the different parts of a web page
-- `Readability`: It's easier for other developers to understand your code. And also for yourself in the future!
+That is all we need to know about HTML for now. Let's build our magic holiday card!
 
 #### Coding
 
@@ -67,41 +66,62 @@ Write the base structure for your magic holiday card:
 ```html
 <main>
   <section>
-    <h1>Happy Holidays!</h1>
-    <h2>Liebe Sophia,</h2>
+    <h1 class="headline">Greetings from Hamburg!</h1>
+    <h2 class="title">Dear Felix,</h2>
     <p>
-      ich wünsche dir eine wunderbare Reise und unvergessliche Erlebnisse.
-      Erhole dich gut und komm mit vielen schönen Erinnerungen zurück!
+      magical greetings from Hamburg! The Speicherstadt at night is fantastic.
+      You should have seen that!
     </p>
     <p>
-      Mögen deine Ferien genau das sein, was du brauchst – eine perfekte
-      Mischung aus Entspannung, Abenteuer und Glücksmomenten.
+      I hope you are doing well and that you are enjoying your holidays. May
+      your holidays be exactly what you need - a perfect mix of relaxation,
+      adventure and moments of happiness.
     </p>
     <p>
-      Alles Liebe, <br />
+      All the best, <br />
       Mareike
     </p>
   </section>
 </main>
 ```
 
-### Style Fonts with own Classes
+#### Semantic HTML
+
+When we write HTML, we always want to make sure that we use the right HTML elements for the right purpose. This is called `semantic HTML`. Semantic HTML means that we use HTML elements for their intended purpose. For example, we use a `<h1>` element for the main headline of our page, a `<p>` element for paragraphs and so on.
+
+**The Benefits of Writing Semantic HTML Are:**
+
+- `Accessibility`: Screenreaders can function much better with semantic HTML, which can help e.g. visually impaired users to navigate the webpage and have a better user experience
+- `SEO`: It's relevant for search engines to evaluate the importance and the context of the different parts of a web page
+- `Readability`: It's easier for other developers to understand your code. And also for yourself in the future!
+
+### Style Fonts with CSS Classes
+
+The basic structure of our card is done for now. 🚀 Now we want to add some styles to make it look nice. 💅 To achieve this, we will use CSS.
 
 #### Explainer
 
-CSS means Cascading Stylesheets. While HTML defines the structure and semantics of your content, we use CSS for design and layout.
+**CSS means Cascading Stylesheets**. While HTML defines the structure and semantics of your content, we use CSS for design and layout.
+
+Let's analyze the word for more
+clarification:
+
+- `Cascading`: CSS rules are applied in a cascading manner. This means that the order of the rules is important. If there are conflicting rules, the last one will be applied.
+- `Stylesheets`: CSS rules are written in a stylesheet. This is a separate file that is linked to the HTML document. This way, we can separate the content from the design.
+
+**When we write CSS we use the following terms:**
 
 - `Selector`: A CSS selector is used to specify the elements to which CSS rules apply.
 - `Property`: Name for a particular property to which a value is attributed.
 - `Value`: The value we assign to a property.
 - `Declaration`: Each pair of property and value is a declaration.
+- `Rule`: A rule consists of one or more declarations. It is written in the following way: `selector { property: value; }`
 
-We only show `.class` selectors.
-If the participants want to overwrite styles, they should either edit the class or write add a new one, but keep them in order of how they want the styles to be applied.
+Today we will only work with one type of selector, which is the `class selector`. We will use classes to style our HTML elements. To achieve this, we need to add a `class` attribute to the HTML element we want to style. The value of the class attribute is the name of the class we want to use. We can use the same class for multiple elements.
 
 #### Coding
 
-Recommended stylings are:
+The first thing we want to do is to add a class to the `<h1>` element. We will use the class `headline` for this element. We want to change the font family, the color and the font size of the headline. To achieve this, we need to do the following:
 
 ```css
 .headline {
@@ -111,7 +131,16 @@ Recommended stylings are:
 }
 ```
 
--> add headline class to HTML
+Within this project we have already added some fonts that you can use:
+
+- `Pacifico`
+- `Great Vibes`
+- `Gluten`
+- `Allison`
+- `Handlee`
+- `Peralta`
+
+Nevertheless, there are also some web safe fonts that you can use like `Helvetica`, `Gill Sans` or `Baskerville`. Web safe fonts means that they are available on most operating systems and browsers. Feel free to try them out!
 
 ### Split into two Sections
 
