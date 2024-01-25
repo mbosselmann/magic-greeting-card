@@ -206,7 +206,7 @@ Next step is to finish the front of the card. We want to add an image. We alread
 <img
   class="postcardimage"
   src="./images/hamburg.jpg"
-  alt="magic greetinc card image"
+  alt="magic greeting card image"
 />
 ```
 
@@ -238,7 +238,7 @@ Feel free to change the color of the background to your liking:
 
 ```css
 .header {
-  background-color: aqua;
+  background-color: aliceblue;
 }
 ```
 
