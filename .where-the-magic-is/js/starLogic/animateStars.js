@@ -12,7 +12,6 @@ export function animateStars(ctx, stars, color, minDistance) {
     updateStar(star);
     drawStar(ctx, star, color);
 
-    // Check if the star's animation has ended
     if (star.animationEnded) {
       const newStar = checkCoordinates(stars, ctx, minDistance);
 
