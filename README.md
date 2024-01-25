@@ -65,7 +65,7 @@ Write the base structure for your magic holiday card:
 
 ```html
 <main>
-  <h1>Greetings from Hamburg!</h1>
+  <h1>Greetings from Hamburg</h1>
   <h2>Dear Felix,</h2>
   <p>
     magical greetings from Hamburg! The Speicherstadt at night is fantastic. You
@@ -151,18 +151,10 @@ We need the predefined classes `.card`, `.front` and `.back` to be added to thei
 ```html
 <main class="card">
   <section class="front">
-    <header class="header">
-      <h1 class="headline">Greetings from Hamburg</h1>
-    </header>
-    <img
-      class="postcardimage"
-      src="./images/hamburg.jpg"
-      alt="magic greetinc card image"
-    />
-    <canvas></canvas>
+    <h1 class="headline">Greetings from Hamburg</h1>
   </section>
   <section class="back">
-    <h2 class="title">Dear Felix,</h2>
+    <h2>Dear Felix,</h2>
     <p>
       magical greetings from Hamburg! The Speicherstadt at night is fantastic.
       You should have seen that!
